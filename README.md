@@ -1,2 +1,1 @@
-# OnlineBankingApp
-An online modern banking system application which allows easy money transfers, transaction tracking, password recovery and much more
+This project introduces Goya Bank, a modern and secure online banking system built using Python (Flask) and SQLite. The application simulates real-world digital banking features including user registration,login, balance management, money transfers, transaction tracking, and password recovery. An administrative panel is also integrated to allow monitoring of users and transactions. Withresponsive frontend, structured backend, and emphasis on data security, the system aims to provide a realistic prototype of a functional banking environment.   
