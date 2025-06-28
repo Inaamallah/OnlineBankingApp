@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Register</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <label for="full_name">Full Name</label>
+    {{ form.full_name(id="full_name", class_="input", placeholder="John Doe") }}
+
+    <label for="cnic">CNIC</label>
+    {{ form.cnic(id="cnic", class_="input", placeholder="1234512345123") }}
+
+    <label for="email">Email</label>
+    {{ form.email(id="email", class_="input", placeholder="example@email.com") }}
+
+    <label for="phone">Phone Number</label>
+    {{ form.phone(id="phone", class_="input", placeholder="03001234567") }}
+
+    <label for="password">Password</label>
+    {{ form.password(id="password", class_="input", placeholder="********") }}
+
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+
+<div style="text-align: center; margin-top: 10px;">
+    <a href="{{ url_for('main.login') }}">Already have an account? Login</a>
+</div>
+{% endblock %}

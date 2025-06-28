@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="dashboard-card">
+    <h3>Available Balance</h3>
+    <p>${{ balance }}</p>
+    <a href="{{ url_for('main.transfer') }}" class="btn btn-primary">Transfer Money</a>
+    <a href="{{ url_for('main.transactions') }}" class="btn btn-primary">View History</a>
+    <a href="{{ url_for('main.deposit') }}" class="btn btn-primary">Deposit Money</a>
+
+
+</div>
+{% endblock %}

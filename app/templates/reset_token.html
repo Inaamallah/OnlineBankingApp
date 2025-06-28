@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Create New Password</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.password.label }}<br>
+    {{ form.password(class="input") }}<br><br>
+    {{ form.confirm_password.label }}<br>
+    {{ form.confirm_password(class="input") }}<br><br>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>My Profile</h2>
+<ul>
+    <li><strong>Full Name:</strong> {{ user.full_name }}</li>
+    <li><strong>Email:</strong> {{ user.email }}</li>
+    <li><strong>CNIC:</strong> {{ user.cnic }}</li>
+    <li><strong>Phone:</strong> {{ user.phone }}</li>
+    <li><strong>Account Number:</strong> {{ user.account_number }}</li>
+    <li><strong>Balance:</strong> ${{ user.balance }}</li>
+</ul>
+{% endblock %}

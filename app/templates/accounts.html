@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Accounts You've Transferred Money To</h2>
+{% if recipients %}
+    <ul>
+        {% for rec in recipients %}
+            <li>
+                <strong>{{ rec.name }}</strong> — {{ rec.account }}<br>
+                Amount: ${{ rec.amount }} on {{ rec.date }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No transfers made yet.</p>
+{% endif %}
+{% endblock %}

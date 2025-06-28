@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BankName</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <h1>🏦 Goya Bank</h1>
+    </header>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+<footer class="footer-nav">
+    <a href="{{ url_for('main.dashboard') }}">
+        <div class="nav-item">🏠<br><span>Home</span></div>
+    </a>
+    <a href="{{ url_for('main.accounts') }}">
+        <div class="nav-item">💳<br><span>Accounts</span></div>
+    </a>
+    <a href="{{ url_for('main.transactions') }}">
+        <div class="nav-item">📄<br><span>Transactions</span></div>
+    </a>
+    <a href="#">
+        <div class="nav-item">💳<br><span>Cards</span></div>
+    </a>
+    <a href="{{ url_for('main.profile') }}">
+        <div class="nav-item">👤<br><span>Profile</span></div>
+    </a>
+    {% if current_user.is_authenticated and current_user.is_admin %}
+    <a href="{{ url_for('main.admin_panel') }}">
+    <div>🛠️<br><span>Admin</span></div>
+    </a>
+    {% endif %}
+
+</footer>
+
+{% if current_user.is_authenticated %}
+    <div style="text-align: right; margin: 10px;">
+        <a href="{{ url_for('main.logout') }}" class="btn-logout">Logout</a>
+    </div>
+{% endif %}
+
+
+</body>
+</html>

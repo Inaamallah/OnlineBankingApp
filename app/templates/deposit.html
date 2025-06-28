@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Deposit Money</h2>
+<p>Available Balance: {{ balance }}</p>
+<form method="POST">
+    <label for="amount">Amount to Deposit</label>
+    <input type="number" name="amount" class="input" step="0.01" placeholder="Enter amount" required>
+    <button type="submit" class="btn btn-primary">Add Funds</button>
+</form>
+{% endblock %}

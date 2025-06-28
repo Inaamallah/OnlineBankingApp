@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Reset Password</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.email.label }}<br>
+    {{ form.email(class="input") }}<br><br>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}

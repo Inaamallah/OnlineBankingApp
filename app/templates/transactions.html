@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Transactions</h2>
+<ul>
+    {% for tx in transactions %}
+        <li>
+            {{ tx.timestamp.strftime('%Y-%m-%d') }} |
+            {{ tx.receiver_account if tx.type == 'debit' else tx.sender_account }} |
+            {{ '+' if tx.type == 'credit' else '-' }}${{ tx.amount }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

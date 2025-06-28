@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Send Money</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.recipient_account.label }}<br>
+    {{ form.recipient_account(class="input") }}<br><br>
+    {{ form.amount.label }}<br>
+    {{ form.amount(class="input") }}<br><br>
+    <p><strong>Confirmation</strong></p>
+    <p>${{ balance }} <span class="note">Available Balance</span></p>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}

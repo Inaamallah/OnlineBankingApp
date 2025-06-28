@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Welcome back</h2>
+<p>Please enter your credentials to access your account.</p>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <label for="email">Email</label>
+    {{ form.email(id="email", class_="input", placeholder="example@email.com") }}
+
+    <label for="password">Password</label>
+    {{ form.password(id="password", class_="input", placeholder="********") }}
+
+
+    {{ form.submit(class_="btn btn-primary") }}
+</form>
+
+
+<div style="text-align: center; margin-top: 10px;">
+    <a href="{{ url_for('main.reset_request') }}">Forgot Password?</a><br>
+    <a href="{{ url_for('main.register') }}">Don't have an account? Register</a>
+</div>
+{% endblock %}
